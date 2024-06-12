@@ -1,3 +1,8 @@
-# Demo-React-Tailwind
+# React + Vite
 
-Tailwind CSS... J'avoue que j'étais un peu hésitant et réticent lorsqu'un développeur (Meschack Irung) qui a vraiment de l'expérience avec ce framework m'a conseillé de me lancer dans l'apprentissage de ce dernier. Et après quelques tours sur la documentation du framework, j'avoue que j'ai aimé et je crois bien que dans le futur je ne pourrais plus m'en passer lorsqu'il s'agira d'écrire du css...
+This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+
+Currently, two official plugins are available:
+
+- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
+- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
