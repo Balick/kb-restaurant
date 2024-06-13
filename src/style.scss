@@ -1,0 +1,38 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@200..700&display=swap");
+
+:root {
+  font-family: "Oswald", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
+
+  color: #fff;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.main {
+  transition: background 0.75s cubic-bezier(0.32, 0, 0.67, 1);
+}
+
+.bg-1 {
+  background: radial-gradient(
+    83.69% 83.69% at 50% 35.84%,
+    #24d381 0%,
+    #00725b 100%
+  );
+}
+
+.p {
+  font-family: "Outfit", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+  font-optical-sizing: auto;
+}
