@@ -3,14 +3,13 @@
 @tailwind utilities;
 @import url("https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Outfit:wght@200..700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@200..700&display=swap");
 
 :root {
-  font-family: "Oswald", sans-serif;
+  font-family: "Inter", sans-serif;
   font-optical-sizing: auto;
   font-weight: 500;
   font-style: normal;
-
-  color: #fff;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -18,7 +17,12 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+.container {
+  @apply mx-auto max-w-6xl px-6 md:px-12 lg:px-6 xl:px-0;
+}
+
 .main {
+  font-family: "Oswald", sans-serif;
   transition: background 0.75s cubic-bezier(0.32, 0, 0.67, 1);
 }
 

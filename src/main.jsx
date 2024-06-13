@@ -6,10 +6,10 @@ import gsap from "gsap";
 
 const ease = "elastic.out(1,0.85)";
 const duration = 1.5;
+const intervalTime = 5000; // 5 seconds
 
 function Main() {
   useEffect(() => {
-    const main = document.querySelector(".main");
     const arrowLeft = document.querySelector(".arrow-left");
     const arrowRight = document.querySelector(".arrow-right");
     const titles = document.querySelectorAll(".title");
@@ -17,17 +17,9 @@ function Main() {
     const images = document.querySelectorAll(".image");
 
     let current = 0;
+    let intervalId;
 
     const update = () => {
-      /*const backgrounds = [
-        "radial-gradient(83.69% 83.69% at 50% 35.84%, #24D381 0%, #00725B 100%)",
-        "radial-gradient(83.69% 83.69% at 50% 35.84%, #E3DC25 0%, #E8C000 67.71%)",
-        "radial-gradient(83.69% 83.69% at 50% 35.84%, #C91920 0%, #6F0012 100%)",
-        "radial-gradient(83.69% 83.69% at 50% 35.84%, #9C00E9 0%, #5F00E0 100%)",
-      ];*/
-
-      //main.style.background = backgrounds[current];
-
       titles.forEach((title, index) => {
         gsap.to(title, {
           duration: duration,
@@ -55,17 +47,39 @@ function Main() {
       });
     };
 
+    const startAutoSlide = () => {
+      intervalId = setInterval(() => {
+        current = (current + 1) % titles.length;
+        update();
+      }, intervalTime);
+    };
+
+    const stopAutoSlide = () => {
+      clearInterval(intervalId);
+    };
+
     arrowLeft.addEventListener("click", () => {
+      stopAutoSlide();
       current = (current - 1 + titles.length) % titles.length;
       update();
+      startAutoSlide();
     });
 
     arrowRight.addEventListener("click", () => {
+      stopAutoSlide();
       current = (current + 1) % titles.length;
       update();
+      startAutoSlide();
     });
 
     update();
+    startAutoSlide();
+
+    return () => {
+      stopAutoSlide();
+      arrowLeft.removeEventListener("click", () => {});
+      arrowRight.removeEventListener("click", () => {});
+    };
   }, []);
 
   return <App />;
