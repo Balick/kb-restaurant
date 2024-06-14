@@ -1,5 +1,5 @@
 {
-  "name": "demo-react-tailwind",
+  "name": "kb-restaurant",
   "description": "Demonstrate the use of react+tailwind by creating a recipe presentation page.",
   "version": "2.0.0",
   "scripts": {
