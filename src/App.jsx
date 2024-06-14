@@ -4,7 +4,7 @@ import HeroSection from "./Components/hero-section.jsx";
 
 export default function App() {
   return (
-    <main className="bg-[#fffaf7]">
+    <main className="bg-black">
       <Header />
       <HeroSection />
       <div className="container mt-16">

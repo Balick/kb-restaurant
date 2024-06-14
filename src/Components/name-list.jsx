@@ -7,7 +7,7 @@ export default function NameList() {
       {names.map((name, index) => (
         <p
           key={index}
-          className={`p text-xl sm:text-2xl md:text-4xl font-light tracking-[1rem] uppercase w-full absolute bottom-10 left-1/2 -translate-x-1/2 text-center name ${
+          className={`p font-extrabold text-amber-900 md:text-white text-xl sm:text-2xl md:text-4xl lg:text-6xl tracking-[1rem] uppercase w-full absolute bottom-48 left-1/2 -translate-x-1/2 text-center name ${
             index !== 0 ? "opacity-0" : ""
           }`}
         >

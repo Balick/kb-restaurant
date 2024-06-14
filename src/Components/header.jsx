@@ -75,10 +75,10 @@ export default function Header() {
   };
 
   return (
-    <div className="fixed top-0 inset-x-0 z-50 bg-[#ffffffd4]">
+    <div className="fixed top-0 inset-x-0 z-50 bg-[#000000d1]">
       <div className="container py-4 flex gap-8 items-center justify-between">
         <header>
-          <h1 className="text-2xl font-bold flex gap-2">
+          <h1 className="text-2xl font-bold flex gap-2 text-amber-800">
             <span>KB</span>
             <span>Restaurant</span>
           </h1>
@@ -108,7 +108,7 @@ export default function Header() {
             </a>
           </div>
           <button
-            className="font-semibold sm:bg-amber-100 px-4 py-1 lg:hidden"
+            className="font-semibold sm:bg-amber-100 sm:text-black lg:text-white px-4 py-1 lg:hidden"
             onClick={toggleMenu}
           >
             <span>MENU</span>

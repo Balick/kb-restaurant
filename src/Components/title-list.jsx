@@ -7,7 +7,7 @@ export default function TitleList() {
       {titles.map((title, index) => (
         <h1
           key={index}
-          className={`opacity-0 text-nowrap -translate-y-full text-amber-900 absolute left-1/2 -translate-x-1/2 top-1/4 text-[18rem] leading-[1] uppercase title`}
+          className={`opacity-0 text-nowrap -translate-y-full absolute left-1/2 -translate-x-1/2 top-1/4 text-[18rem] leading-[1] uppercase title`}
         >
           {title}
         </h1>
