@@ -1,9 +1,6 @@
 import React from "react";
-import TitleList from "./Components/title-list.jsx";
-import ImageList from "./Components/image-list.jsx";
-import NameList from "./Components/name-list.jsx";
-import ArrowDirection from "./Components/arrow-direction.jsx";
 import Header from "./Components/header.jsx";
+import HeroSection from "./Components/hero-section.jsx";
 
 export default function App() {
   return (
@@ -30,18 +27,5 @@ export default function App() {
         deleniti quod.
       </div>
     </main>
-  );
-}
-
-function HeroSection() {
-  return (
-    <div className="relative w-full overflow-hidden">
-      <div className="relative w-full h-screen flex items-center justify-center p-4 main">
-        <TitleList />
-        <ImageList />
-        <NameList />
-      </div>
-      <ArrowDirection />
-    </div>
   );
 }
