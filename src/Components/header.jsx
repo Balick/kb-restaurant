@@ -56,11 +56,12 @@ const mobileLinkVars = {
   },
 };
 
-const MobileNavLink = ({ title, href }) => {
+const MobileNavLink = ({ title, href, handleClick }) => {
   return (
     <motion.div
       variants={mobileLinkVars}
       className="text-5xl uppercase text-black"
+      onClick={() => handleClick(false)}
     >
       <a href={href}>{title}</a>
     </motion.div>
@@ -78,14 +79,14 @@ export default function Header() {
     <div className="fixed top-0 inset-x-0 z-50 bg-[#000000d1]">
       <div className="container py-4 flex gap-8 items-center justify-between">
         <header>
-          <h1 className="text-2xl font-bold flex gap-2 text-amber-800">
+          <a href="/" className="text-2xl font-bold flex gap-2 text-amber-700">
             <span>KB</span>
             <span>Restaurant</span>
-          </h1>
+          </a>
         </header>
         <nav className="hidden lg:flex gap-2 items-center">
           <a
-            href="#"
+            href="#contact"
             className="bg-amber-700 text-white px-4 py-2 rounded-full font-semibold"
           >
             <span>Order online</span>
@@ -151,7 +152,11 @@ export default function Header() {
                   {navitems.map((link, index) => {
                     return (
                       <div className="overflow-hidden" key={index}>
-                        <MobileNavLink title={link.title} href={link.link} />
+                        <MobileNavLink
+                          title={link.title}
+                          href={link.link}
+                          handleClick={setOpen}
+                        />
                       </div>
                     );
                   })}

@@ -12,8 +12,11 @@
     "@iconscout/react-unicons": "^2.0.2",
     "framer-motion": "^11.2.10",
     "gsap": "^3.12.5",
+    "lucide-react": "^0.395.0",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "react-icons": "^5.2.1",
+    "swiper": "^11.1.4"
   },
   "devDependencies": {
     "@types/react": "^18.2.66",
