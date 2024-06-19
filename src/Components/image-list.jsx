@@ -1,10 +1,10 @@
 import React from "react";
-import { images } from "../data/index.js";
+import { burgers } from "../data/index.js";
 
 export default function ImageList() {
   return (
     <div>
-      {images.map((src, index) => (
+      {burgers.map(({ src }, index) => (
         <img
           key={index}
           src={src}

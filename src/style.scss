@@ -1,6 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
 @import url("https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Outfit:wght@200..700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@200..700&display=swap");
@@ -10,6 +11,8 @@
   font-optical-sizing: auto;
   font-weight: 500;
   font-style: normal;
+  color: #fff;
+  background-color: #000;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -39,4 +42,17 @@
   font-weight: 500;
   font-style: normal;
   font-optical-sizing: auto;
+}
+
+.swiper-pagination-bullet {
+  @apply bg-slate-400;
+}
+
+.swiper-pagination-bullet-active {
+  @apply bg-amber-700;
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+  @apply text-white;
 }
