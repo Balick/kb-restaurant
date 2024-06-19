@@ -1,12 +1,25 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Header from "./components/Header.jsx";
 import HeroSection from "./components/HeroSection.jsx";
 import Slider from "./components/Slider.jsx";
 import { burgers, drinks } from "./data";
 import Footer from "./components/Footer.jsx";
+import { motion } from "framer-motion";
 
 export default function App() {
-  return (
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setIsLoading(false);
+    }, 2000);
+
+    return () => clearTimeout(timer);
+  }, []);
+
+  return isLoading ? (
+    <Loading />
+  ) : (
     <main className="bg-black">
       <Header />
       <HeroSection />
@@ -58,5 +71,26 @@ export default function App() {
       </div>
       <Footer />
     </main>
+  );
+}
+
+function Loading() {
+  return (
+    <motion.div
+      className="bg-black fixed inset-0 z-50 flex items-center justify-center"
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      transition={{ duration: 1 }}
+    >
+      <motion.p
+        className="text-amber-700 text-2xl md:text-4xl lg:text-7xl xl:text-9xl font-bold"
+        initial={{ scale: 0 }}
+        animate={{ scale: 1 }}
+        transition={{ duration: 1 }}
+      >
+        KB RESTAURANT
+      </motion.p>
+    </motion.div>
   );
 }
