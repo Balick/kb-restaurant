@@ -1,7 +1,7 @@
 import TitleList from "./title-list.jsx";
 import ImageList from "./image-list.jsx";
 import NameList from "./name-list.jsx";
-import ArrowDirection from "./arrow-direction.jsx";
+import ArrowDirection from "./ArrowDirection.jsx";
 
 export default function HeroSection() {
   return (
