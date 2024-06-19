@@ -75,6 +75,7 @@ const Slider = ({ data }) => {
               <img
                 src={src}
                 alt="burger image"
+                loading="lazy"
                 className="h-[200px] md:h-[268px]"
               />
               <div className="flex flex-col gap-2 justify-between max-w-[85%]">
