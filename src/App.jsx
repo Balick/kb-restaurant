@@ -1,9 +1,9 @@
 import React from "react";
-import Header from "./Components/header.jsx";
-import HeroSection from "./Components/hero-section.jsx";
-import SlideBurger from "./Components/ActiveSliser.jsx";
-import { burgers, drinks } from "./data/index.js";
-import Footer from "./Components/Footer.jsx";
+import Header from "./components/Header.jsx";
+import HeroSection from "./components/HeroSection.jsx";
+import Slider from "./components/Slider.jsx";
+import { burgers, drinks } from "./data";
+import Footer from "./components/Footer.jsx";
 
 export default function App() {
   return (
@@ -24,11 +24,11 @@ export default function App() {
         <h3 className="mx-auto text-xl border-b-2 border-amber-700 w-max text-amber-700 uppercase mb-4">
           Nos Burgers
         </h3>
-        <SlideBurger data={burgers} />
+        <Slider data={burgers} />
         <h3 className="mx-auto text-xl border-b-2 border-amber-700 w-max text-amber-700 uppercase mb-4">
           Nos Boissons
         </h3>
-        <SlideBurger data={drinks} />
+        <Slider data={drinks} />
       </div>
       <div
         id="contact"

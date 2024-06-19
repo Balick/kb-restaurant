@@ -1,10 +1,3 @@
-export const titles = [
-  "Cheeseburger",
-  "Veggie Burger",
-  "Chicken Burger",
-  "Fish Burger",
-];
-
 export const drinks = [
   {
     src: "/images/drink1.png",
@@ -152,14 +145,7 @@ export const burgers = [
   },
 ];
 
-export const names = [
-  "Cheeseburger",
-  "Veggie Burger",
-  "Chicken Burger",
-  "Fish Burger",
-];
-
-export const navitems = [
+export const navItems = [
   {
     title: "Contact",
     link: "#contact",

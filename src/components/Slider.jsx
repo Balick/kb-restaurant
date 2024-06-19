@@ -10,10 +10,13 @@ import "swiper/css/navigation";
 import { Pagination, Navigation } from "swiper/modules";
 import { Phone } from "lucide-react";
 
-const SlideBurger = ({ data }) => {
+const Slider = ({ data }) => {
+  // State to track the active slide index
   const [activeIndex, setActiveIndex] = useState(0);
+  // State to track the number of slides per view
   const [slidesPerView, setSlidesPerView] = useState(1);
 
+  // Animation variants for the slides
   const slideVariants = {
     hidden: { opacity: 0, y: 50 },
     visible: { opacity: 1, y: 0 },
@@ -22,6 +25,7 @@ const SlideBurger = ({ data }) => {
   return (
     <div className="flex items-center justify-center flex-col mb-16">
       <Swiper
+        // Responsive breakpoints for different screen sizes
         breakpoints={{
           0: {
             slidesPerView: 1,
@@ -36,16 +40,21 @@ const SlideBurger = ({ data }) => {
             spaceBetween: 15,
           },
         }}
+        // Pagination settings
         pagination={{
           clickable: true,
           renderBullet: function (index, className) {
             return '<span class="' + className + '"></span>';
           },
         }}
+        // Enable navigation buttons
         navigation={true}
+        // Include necessary Swiper modules
         modules={[Pagination, Navigation]}
         className="container"
+        // Update activeIndex state on slide change
         onSlideChange={(swiper) => setActiveIndex(swiper.activeIndex)}
+        // Update slidesPerView state on breakpoint change
         onBreakpoint={(swiper, breakpointParams) =>
           setSlidesPerView(breakpointParams.slidesPerView)
         }
@@ -81,7 +90,10 @@ const SlideBurger = ({ data }) => {
                   <span className="">
                     {price} <span className="text-amber-500">$</span>
                   </span>
-                  <a href="#contact" className="group bg-amber-7000 text-white px-4 py-2 rounded-full bg-green-700 hover:bg-green-800 transition-all duration-300">
+                  <a
+                    href="#contact"
+                    className="group bg-amber-7000 text-white px-4 py-2 rounded-full bg-green-700 hover:bg-green-800 transition-all duration-300"
+                  >
                     <span className="text-sm flex items-center gap-2">
                       Order now &nbsp; |{" "}
                       <Phone className="w-6 group-hover:rotate-12 group-hover:scale-110 transition-all duration-300" />
@@ -97,4 +109,4 @@ const SlideBurger = ({ data }) => {
   );
 };
 
-export default SlideBurger;
+export default Slider;

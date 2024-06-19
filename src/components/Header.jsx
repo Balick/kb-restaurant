@@ -1,79 +1,48 @@
-import { navitems } from "../data/index.js";
+import { navItems } from "../data";
 import { AnimatePresence, motion } from "framer-motion";
-import { React, useState } from "react";
+import React, { useState } from "react";
 
+// Animation variants for the menu
 const menuVars = {
-  initial: {
-    scaleY: 0,
-  },
+  initial: { scaleY: 0 },
   animate: {
     scaleY: 1,
-    transition: {
-      duration: 0.5,
-      ease: [0.12, 0, 0.39, 0],
-    },
+    transition: { duration: 0.5, ease: [0.12, 0, 0.39, 0] },
   },
   exit: {
     scaleY: 0,
-    transition: {
-      delay: 0.5,
-      duration: 0.5,
-      ease: [0.22, 1, 0.36, 1],
-    },
+    transition: { delay: 0.5, duration: 0.5, ease: [0.22, 1, 0.36, 1] },
   },
 };
 
+// Animation variants for the container
 const containerVars = {
-  initial: {
-    transition: {
-      staggerChildren: 0.09,
-      staggerDirection: -1,
-    },
-  },
-  open: {
-    transition: {
-      delayChildren: 0.3,
-      staggerChildren: 0.09,
-      staggerDirection: 1,
-    },
-  },
+  initial: { transition: { staggerChildren: 0.09, staggerDirection: -1 } },
+  open: { transition: { delayChildren: 0.3, staggerChildren: 0.09, staggerDirection: 1 } },
 };
 
+// Animation variants for mobile links
 const mobileLinkVars = {
-  initial: {
-    y: "30vh",
-    transition: {
-      duration: 0.5,
-      ease: [0.37, 0, 0.63, 1],
-    },
-  },
-  open: {
-    y: 0,
-    transition: {
-      ease: [0, 0.55, 0.45, 1],
-      duration: 0.7,
-    },
-  },
+  initial: { y: "30vh", transition: { duration: 0.5, ease: [0.37, 0, 0.63, 1] } },
+  open: { y: 0, transition: { ease: [0, 0.55, 0.45, 1], duration: 0.7 } },
 };
 
-const MobileNavLink = ({ title, href, handleClick }) => {
-  return (
-    <motion.div
-      variants={mobileLinkVars}
-      className="text-5xl uppercase text-black"
-      onClick={() => handleClick(false)}
-    >
-      <a href={href}>{title}</a>
-    </motion.div>
-  );
-};
+// Component for individual mobile navigation links
+const MobileNavLink = ({ title, href, handleClick }) => (
+  <motion.div
+    variants={mobileLinkVars}
+    className="text-5xl uppercase text-black"
+    onClick={() => handleClick(false)}
+  >
+    <a href={href}>{title}</a>
+  </motion.div>
+);
 
-export default function Header() {
-  const [open, setOpen] = useState(false);
+const Header = () => {
+  const [open, setOpen] = useState(false); // State to manage menu open/close
 
-  const toggleMenu = () => {
-    setOpen((prevOpen) => !prevOpen);
-  };
+  // Function to toggle the menu state
+  const toggleMenu = () => setOpen((prevOpen) => !prevOpen);
 
   return (
     <div className="fixed top-0 inset-x-0 z-50 bg-[#000000d1]">
@@ -85,14 +54,11 @@ export default function Header() {
           </a>
         </header>
         <nav className="hidden lg:flex gap-2 items-center">
-          <a
-            href="#contact"
-            className="bg-amber-700 text-white px-4 py-2 rounded-full font-semibold"
-          >
+          <a href="#contact" className="bg-amber-700 text-white px-4 py-2 rounded-full font-semibold">
             <span>Order online</span>
           </a>
           <ul className="flex gap-4">
-            {navitems.map(({ title, link }, index) => (
+            {navItems.map(({ title, link }, index) => (
               <li key={index}>
                 <a href={link}>{title}</a>
               </li>
@@ -101,12 +67,8 @@ export default function Header() {
         </nav>
         <div className="flex items-center justify-center gap-8">
           <div className="hidden sm:flex flex-col">
-            <small className="text-amber-600 font-semibold">
-              Call and Order
-            </small>
-            <a href="tel:+243893666998" className="font-extrabold text-xl">
-              +243 893 666 998
-            </a>
+            <small className="text-amber-600 font-semibold">Call and Order</small>
+            <a href="tel:+243893666998" className="font-extrabold text-xl">+243 893 666 998</a>
           </div>
           <button
             className="font-semibold sm:bg-amber-100 sm:text-black lg:text-white px-4 py-1 lg:hidden"
@@ -135,10 +97,7 @@ export default function Header() {
                       <span>Restaurant</span>
                     </h1>
                   </header>
-                  <button
-                    className="font-semibold text-black"
-                    onClick={toggleMenu}
-                  >
+                  <button className="font-semibold text-black" onClick={toggleMenu}>
                     <span>CLOSE</span>
                   </button>
                 </div>
@@ -147,19 +106,13 @@ export default function Header() {
                   initial="initial"
                   animate="open"
                   exit="initial"
-                  className="flex flex-col h-full justify-center font-lora items-center gap-4 "
+                  className="flex flex-col h-full justify-center font-lora items-center gap-4"
                 >
-                  {navitems.map((link, index) => {
-                    return (
-                      <div className="overflow-hidden" key={index}>
-                        <MobileNavLink
-                          title={link.title}
-                          href={link.link}
-                          handleClick={setOpen}
-                        />
-                      </div>
-                    );
-                  })}
+                  {navItems.map((link, index) => (
+                    <div className="overflow-hidden" key={index}>
+                      <MobileNavLink title={link.title} href={link.link} handleClick={setOpen} />
+                    </div>
+                  ))}
                 </motion.div>
               </div>
             </div>
@@ -168,4 +121,6 @@ export default function Header() {
       </AnimatePresence>
     </div>
   );
-}
+};
+
+export default Header;
