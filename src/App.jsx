@@ -48,7 +48,7 @@ export default function App() {
         className="w-full h-80 flex items-center justify-center relative"
       >
         <img
-          src="/images/background.png"
+          src="/images/background.webp"
           alt="background"
           className="absolute w-full h-full object-cover opacity-[.1]"
         />

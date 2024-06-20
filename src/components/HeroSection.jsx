@@ -112,11 +112,11 @@ function HeroSection() {
             ))}
           </div>
           <div>
-            {burgers.map(({ src }, index) => (
+            {burgers.map(({ src, name }, index) => (
               <img
                 key={index}
                 src={src}
-                alt="Burger"
+                alt={name}
                 className={`scale-50 translate-y-full absolute top-[30%] md:top-0 md:pt-12 left-[48%] -translate-x-1/2 flex items-center justify-center w-[800px] object-cover image ${
                   index === 0 ? "w-[650px]" : ""
                 }`}

@@ -74,7 +74,7 @@ const Slider = ({ data }) => {
             >
               <img
                 src={src}
-                alt="burger image"
+                alt={name}
                 loading="lazy"
                 className="h-[200px] md:h-[268px]"
               />
